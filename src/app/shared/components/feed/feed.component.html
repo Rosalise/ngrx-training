@@ -28,5 +28,11 @@
       </a>
     </div>
     PAGINATION
+    <ngpr-pagination
+      [total]="data.feed.articlesCount"
+      [limit]="limit"
+      [url]="baseUrl"
+      [currentPage]="currentPage"
+    ></ngpr-pagination>
   </div>
 </ng-container>
