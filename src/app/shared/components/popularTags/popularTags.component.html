@@ -1,0 +1,20 @@
+<ng-container *ngIf="data$ | async as data">
+  <ngpr-loading *ngIf="data.isLoading"></ngpr-loading>
+  <ngpr-error-message
+    *ngIf="data.error"
+    [message]="data.error"
+  ></ngpr-error-message>
+
+  <div class="sidebar" *ngIf="data.popularTags">
+    <p>Popular Tags</p>
+    <div class="tag-list">
+      <a
+        *ngFor="let popularTag of data.popularTags"
+        [routerLink]="['/tags', popularTag]"
+        class="tag-default tag-pill"
+      >
+        {{ popularTag }}</a
+      >
+    </div>
+  </div>
+</ng-container>

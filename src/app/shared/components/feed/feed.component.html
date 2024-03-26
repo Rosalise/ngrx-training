@@ -24,10 +24,9 @@
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
         <span>Read more...</span>
-        TAG LIST
+        <ngpr-tag-list [tags]="article.tagList"></ngpr-tag-list>
       </a>
     </div>
-    PAGINATION
     <ngpr-pagination
       [total]="data.feed.articlesCount"
       [limit]="limit"
